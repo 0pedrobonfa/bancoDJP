@@ -4,6 +4,7 @@ class contaBancaria
 
         this.nome = nome;
         this.saldo = saldo;
+        this.registro = [];
 
     }
     deposita(quantidade)
@@ -11,12 +12,17 @@ class contaBancaria
         this.saldo = this.saldo + quantidade;
         console.log("Você depositou", quantidade);
         console.log(`Seu saldo agora é ${this.saldo}`);
+        this.saldo.adicionaHistorico(quantidade);
     }
     saca(quantidade)
     {
         this.saldo = this.saldo - quantidade;
         console.log("Você sacou", quantidade);
         console.log(`Seu saldo agora é ${this.saldo}`);
+    }
+    mostraHistorico()
+    {
+        //for
     }
     
 
